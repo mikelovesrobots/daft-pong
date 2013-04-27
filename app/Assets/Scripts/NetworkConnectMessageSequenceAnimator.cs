@@ -4,8 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
-    private const float FADE_ANIMATION_TIME = 2f;
+    private const float FADE_ANIMATION_TIME = 1f;
     private const float MOVE_ANIMATION_TIME = 1f;
+    private const float FADE_OUT_DELAY = 1.5f;
     private const float FADE_IN_AMOUNT = 0.5f;
     private const float FADE_OUT_AMOUNT = 0f;
     private const string NAMED_COLOR_VALUE = "_TintColor";
@@ -21,20 +22,20 @@ public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
 
     private void Connect() {
         FadeIn(ConnectingToMatchmakingServers, 0f);
-        FadeOut(ConnectingToMatchmakingServers, 2.5f, () => PostConnect());
+        FadeOut(ConnectingToMatchmakingServers, FADE_OUT_DELAY, () => PostConnect());
     }
 
     private void PostConnect() {
-        if (FiftyPercentChance) {
-            Connect();
-        } else {
+        if (EightyPercentChance) {
             RetrieveGames();
+        } else {
+            Connect();
         }
     }
 
     private void RetrieveGames() {
         FadeIn(RetrievingGamesInProgress, 0f);
-        FadeOut(RetrievingGamesInProgress, 2.5f, () => PostRetrievingGamesInProgress());
+        FadeOut(RetrievingGamesInProgress, FADE_OUT_DELAY, () => PostRetrievingGamesInProgress());
     }
 
     private void PostRetrievingGamesInProgress() {
@@ -47,11 +48,11 @@ public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
 
     private void Join() {
         FadeIn(JoiningGameInProgress, 0f);
-        FadeOut(JoiningGameInProgress, 2.5f, () => PostJoin());
+        FadeOut(JoiningGameInProgress, FADE_OUT_DELAY, () => PostJoin());
     }
 
     private void PostJoin() {
-        if (ThirtyPercentChance) {
+        if (EightyPercentChance) {
             ExitAction.Act();
         } else if (FiftyPercentChance) {
             Join();
@@ -62,7 +63,7 @@ public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
 
     private void ConnectionFailed() {
         FadeIn(ConnectionTimeout, 0f);
-        FadeOut(ConnectionTimeout, 2.5f, () => Join());
+        FadeOut(ConnectionTimeout, FADE_OUT_DELAY, () => Join());
     }
 
     private bool FiftyPercentChance {
@@ -71,6 +72,10 @@ public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
 
     private bool ThirtyPercentChance {
         get { return UnityEngine.Random.Range(0, 3) == 0; }
+    }
+
+    private bool EightyPercentChance {
+        get { return UnityEngine.Random.Range(0, 5) <= 3; }
     }
 
     private void FadeIn(GameObject target, float delay) {
