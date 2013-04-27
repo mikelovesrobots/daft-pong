@@ -10,14 +10,14 @@ public class TitleAnimation : MonoBehaviour {
     private const string NAMED_COLOR_VALUE = "_TintColor";
     public GameObject Mikelovesrobots;
     public GameObject Title;
-    public GameObject JoinGame;
+    public GameObject StartGame;
 
     public void Animate() {
         FadeIn(Mikelovesrobots, 0f);
         FadeOut(Mikelovesrobots, 2.5f);
         FadeIn(Title, 4f);
         MoveUp(Title, Vector3.up * 2, 5f);
-        FadeIn(JoinGame, 6f);
+        FadeIn(StartGame, 6f);
     }
 
     private void FadeIn(GameObject target, float delay) {
