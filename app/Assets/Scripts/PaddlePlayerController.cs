@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerPaddleController : MonoBehaviour {
+public class PaddlePlayerController : MonoBehaviour {
     private const float DISTANCE_FROM_CAMERA = 10f;
 
     void FixedUpdate() {
