@@ -4,6 +4,7 @@ using System.Collections;
 public class AudioPlayer : MonoBehaviour {
     public AudioSource PlayGameSound;
     public AudioSource[] SelectSounds;
+    public AudioSource[] BounceSounds;
 
     private static AudioPlayer instance;
     public static AudioPlayer Instance {
@@ -22,6 +23,10 @@ public class AudioPlayer : MonoBehaviour {
 
     public void Select() {
         PlayRandom(SelectSounds);
+    }
+
+    public void Bounce() {
+        PlayRandom(BounceSounds);
     }
 
     private void PlayRandom(AudioSource[] AudioSources) {
