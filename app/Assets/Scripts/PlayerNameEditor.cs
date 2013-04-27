@@ -6,13 +6,12 @@ public class PlayerNameEditor : MonoBehaviour {
     private const float HEIGHT = 80;
     private const string CONTROL_NAME = "PlayerName";
     public GUISkin GuiSkin;
-    public string PlayerName;
 
     void OnGUI () {
         GUI.skin = GuiSkin;
 
         GUI.SetNextControlName(CONTROL_NAME);
-        PlayerName = GUI.TextField(Rect, PlayerName);
+        Player.Name = GUI.TextField(Rect, Player.Name);
 
         if (GUI.GetNameOfFocusedControl() == string.Empty) {
             GUI.FocusControl(CONTROL_NAME);
