@@ -4,18 +4,20 @@ using System.Collections.Generic;
 
 public class TitleAnimation : MonoBehaviour {
     private const float FADE_ANIMATION_TIME = 2f;
-    private const float MOVE_ANIMATION_TIME = 1f;
+    private const float MOVE_ANIMATION_TIME = 2f;
     private const float FADE_IN_AMOUNT = 0.5f;
     private const float FADE_OUT_AMOUNT = 0f;
     private const string NAMED_COLOR_VALUE = "_TintColor";
     public GameObject Mikelovesrobots;
     public GameObject Title;
+    public GameObject JoinGame;
 
     public void Animate() {
         FadeIn(Mikelovesrobots, 0f);
         FadeOut(Mikelovesrobots, 2.5f);
-        FadeIn(Title, 5f);
-        MoveUp(Title, Vector3.up * 2, 7f);
+        FadeIn(Title, 4f);
+        MoveUp(Title, Vector3.up * 2, 5f);
+        FadeIn(JoinGame, 6f);
     }
 
     private void FadeIn(GameObject target, float delay) {
