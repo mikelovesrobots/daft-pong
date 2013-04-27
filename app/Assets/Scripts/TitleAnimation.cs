@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TitleAnimation : MonoBehaviour {
     private const float FADE_ANIMATION_TIME = 2f;
-    private const float MOVE_ANIMATION_TIME = 2f;
+    private const float MOVE_ANIMATION_TIME = 1f;
     private const float FADE_IN_AMOUNT = 0.5f;
     private const float FADE_OUT_AMOUNT = 0f;
     private const string NAMED_COLOR_VALUE = "_TintColor";
