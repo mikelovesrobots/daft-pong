@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class SceneTransition : MonoBehaviour {
-    private const float FADE_IN_TIME = 0.33f;
+    private const float FADE_IN_TIME = 1f;
     private const float FADE_OUT_AMOUNT = 1f;
-    private const float FADE_OUT_TIME = 0.33f;
+    private const float FADE_OUT_TIME = 1f;
 
     private string levelName;
 
