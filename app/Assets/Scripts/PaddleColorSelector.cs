@@ -8,6 +8,7 @@ public class PaddleColorSelector : MonoBehaviour {
 
     void OnMouseDown() {
         Player.Color = Color;
+        AudioPlayer.Instance.Select();
     }
 
     void Start() {

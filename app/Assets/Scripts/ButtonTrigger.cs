@@ -8,6 +8,7 @@ public class ButtonTrigger : TriggerBase {
 
     void OnMouseDown () {
         MaterialChanger.ChangeMaterial(HighlightMaterial);
+        AudioPlayer.Instance.Select();
     }
 
     void OnMouseUp () {
