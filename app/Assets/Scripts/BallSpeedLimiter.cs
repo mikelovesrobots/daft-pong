@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class BallSpeedLimiter : MonoBehaviour {
-    private const float SPEED_LIMIT = 10f;
+    private const float SPEED_LIMIT = 30f;
 
     void FixedUpdate() {
         if (rigidbody.velocity.magnitude > SPEED_LIMIT) {
