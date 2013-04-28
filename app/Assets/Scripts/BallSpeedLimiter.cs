@@ -7,7 +7,6 @@ public class BallSpeedLimiter : MonoBehaviour {
     void FixedUpdate() {
         if (rigidbody.velocity.magnitude > SPEED_LIMIT) {
             rigidbody.velocity = rigidbody.velocity.normalized * SPEED_LIMIT;
-            Debug.Log("Welcome to the dangerZONE");
         }
     }
 }
