@@ -6,5 +6,6 @@ public class ScoreResultsInitializer : MonoBehaviour {
 
     void Start() {
         ScoreResultsTitleRenderer.Initialize(ScoreResultsOptions.PlayerWon);
+        AudioPlayer.Instance.ScoreResults();
     }
 }
