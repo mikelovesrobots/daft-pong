@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class BallPaddleElasticity : MonoBehaviour {
-    private const float FORCE = 30f;
-    private const float X_FORCE_DAMPENING = 0.3f;
+    private const float FORCE = 20f;
+    private const float X_FORCE_DAMPENING = 0.05f;
     private const string PADDLE_TAG = "Paddle";
 
     void OnCollisionEnter(Collision collisionInfo) {
