@@ -11,6 +11,7 @@ public class PaddleFactory : MonoBehaviour {
 
     public static GameObject Player(Vector3 position) {
         var instance = Spawn(position);
+        instance.GetComponent<ColorChanger>().ChangeColor(PlayerOptions.Color);
         instance.AddComponent<PaddlePlayerController>();
         return instance;
     }

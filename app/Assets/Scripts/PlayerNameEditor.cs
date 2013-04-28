@@ -11,7 +11,7 @@ public class PlayerNameEditor : MonoBehaviour {
         GUI.skin = GuiSkin;
 
         GUI.SetNextControlName(CONTROL_NAME);
-        Player.Name = GUI.TextField(Rect, Player.Name);
+        PlayerOptions.Name = GUI.TextField(Rect, PlayerOptions.Name);
 
         if (GUI.GetNameOfFocusedControl() == string.Empty) {
             GUI.FocusControl(CONTROL_NAME);

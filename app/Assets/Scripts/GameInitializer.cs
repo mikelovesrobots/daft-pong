@@ -12,8 +12,10 @@ public class GameInitializer : MonoBehaviour {
     }
 
     private void SpawnPlayers() {
-        PaddleFactory.Ai(LEFT);
-        PaddleFactory.Ai(RIGHT);
+        for (int i=0; i < 1; i++) {
+            PaddleFactory.Ai(LEFT);
+            PaddleFactory.Ai(RIGHT);
+        }
         PaddleFactory.Player(Vector3.zero);
     }
 }

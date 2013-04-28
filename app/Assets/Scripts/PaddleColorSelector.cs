@@ -7,7 +7,7 @@ public class PaddleColorSelector : MonoBehaviour {
     public ColorChanger ColorChanger;
 
     void OnMouseDown() {
-        Player.Color = Color;
+        PlayerOptions.Color = Color;
         AudioPlayer.Instance.Select();
     }
 
@@ -20,6 +20,6 @@ public class PaddleColorSelector : MonoBehaviour {
     }
 
     private bool ShouldShowColor {
-        get { return Player.Color == Color; }
+        get { return PlayerOptions.Color == Color; }
     }
 }

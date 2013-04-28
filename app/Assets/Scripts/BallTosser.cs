@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class BallTosser : MonoBehaviour {
-    private const float FORCE_MULTIPLIER = 100f;
+    private const float FORCE_MULTIPLIER = 25f;
     private const float MIN_X_SPEED = 0.5f;
 
     void Start() {
