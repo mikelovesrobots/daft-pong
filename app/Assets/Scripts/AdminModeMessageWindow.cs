@@ -10,7 +10,7 @@ public class AdminModeMessageWindow : MonoBehaviour {
     private string Message;
 
     public void Initialize() {
-        Message = "Could not sync player records to server.\nReason \"Player " + PlayerOptions.Name  + " log corrupted\".\nAdmin mode enabled";
+        Message = "Could not sync player records to server.\nReason \"Player " + PlayerOptions.Name  + " log corrupted\".\nAdmin mode enabled and player freed from track.";
     }
 
     void OnGUI () {
