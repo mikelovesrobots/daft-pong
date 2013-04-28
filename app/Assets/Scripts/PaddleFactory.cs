@@ -3,15 +3,13 @@ using System.Collections;
 
 public class PaddleFactory : MonoBehaviour {
     public static GameObject Ai(Vector3 position) {
-        var instance = Spawn(position);
-        var ai = instance.AddComponent<PaddleAiPerfectController>();
-        ai.Ball = GameObject.Find("Ball").transform;
-        return instance;
+        return Spawn(position);
     }
 
     public static GameObject Player(Vector3 position) {
         var instance = Spawn(position);
         instance.GetComponent<ColorChanger>().ChangeColor(PlayerOptions.Color);
+        Destroy(instance.GetComponent<PaddleAiPersonality>());
         instance.AddComponent<PaddlePlayerController>();
         return instance;
     }

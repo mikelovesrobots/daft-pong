@@ -12,7 +12,7 @@ public class GameInitializer : MonoBehaviour {
     }
 
     private void SpawnPlayers() {
-        for (int i=0; i < 1; i++) {
+        for (int i=0; i < 50; i++) {
             PaddleFactory.Ai(LEFT);
             PaddleFactory.Ai(RIGHT);
         }
