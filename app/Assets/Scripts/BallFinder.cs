@@ -15,6 +15,10 @@ public class BallFinder : MonoBehaviour {
         }
     }
 
+    public void RegisterBall(GameObject ball) {
+        this.ball = ball;
+    }
+
     public GameObject Find() {
         if (ball == null) {
             ball = GameObject.Find("Ball");

@@ -5,7 +5,7 @@ public class BallTosser : MonoBehaviour {
     private const float FORCE_MULTIPLIER = 25f;
     private const float MIN_X_SPEED = 0.5f;
 
-    void Start() {
+    public void Initialize() {
         rigidbody.AddForce(TossForce);
     }
 

@@ -9,6 +9,7 @@ public class GameInitializer : MonoBehaviour {
     void Start () {
         AudioPlayer.Instance.PlayGame();
         SpawnPlayers();
+        BallFactory.Create();
     }
 
     private void SpawnPlayers() {
