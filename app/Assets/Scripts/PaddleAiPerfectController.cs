@@ -2,7 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class PaddleAiPerfectController : PaddleAi {
-    private const float MAX_DELTA = 0.05f;
+    private const float MIN_SPEED = 0.01f;
+    private const float MAX_SPEED = 0.05f;
+    private float speed = 0f;
+
+    void Start() {
+        speed = Random.Range(MIN_SPEED, MAX_SPEED);
+    }
 
     public override void Tick() {
         UpdateYPosition();
@@ -17,7 +23,7 @@ public class PaddleAiPerfectController : PaddleAi {
     private float AcceptableYTowardsBall {
         get {
             var delta = Ball.position.y - transform.position.y;
-            var acceptableDelta = Mathf.Clamp(delta, -MAX_DELTA, MAX_DELTA);
+            var acceptableDelta = Mathf.Clamp(delta, -speed, speed);
             return transform.position.y + acceptableDelta;
         }
     }

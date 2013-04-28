@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GameInitializer : MonoBehaviour {
     public Transform LeftChannel;
     public Transform RightChannel;
+    public int PlayersPerSide = 50;
 
     void Start () {
         AudioPlayer.Instance.PlayGame();
@@ -13,10 +14,10 @@ public class GameInitializer : MonoBehaviour {
     }
 
     private void SpawnPlayers() {
-        for (int i=0; i < 50; i++) {
+        for (int i=0; i < PlayersPerSide; i++) {
             PaddleFactory.Ai(LeftChannel.position);
             PaddleFactory.Ai(RightChannel.position);
         }
-        PaddleFactory.Player(Vector3.zero);
+        PaddleFactory.Player(RightChannel.position);
     }
 }
