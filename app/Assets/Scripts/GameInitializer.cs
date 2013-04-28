@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameInitializer : MonoBehaviour {
-    private Vector3 LEFT = new Vector3(-3.5f, 0, 0);
-    private Vector3 RIGHT = new Vector3(3.5f, 0, 0);
+    public Transform LeftChannel;
+    public Transform RightChannel;
 
     void Start () {
         AudioPlayer.Instance.PlayGame();
@@ -13,8 +13,8 @@ public class GameInitializer : MonoBehaviour {
 
     private void SpawnPlayers() {
         for (int i=0; i < 50; i++) {
-            PaddleFactory.Ai(LEFT);
-            PaddleFactory.Ai(RIGHT);
+            PaddleFactory.Ai(LeftChannel.position);
+            PaddleFactory.Ai(RightChannel.position);
         }
         PaddleFactory.Player(Vector3.zero);
     }
