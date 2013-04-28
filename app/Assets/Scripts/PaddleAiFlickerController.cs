@@ -4,7 +4,7 @@ using System.Collections;
 public class PaddleAiFlickerController : PaddleAi {
     private const float ARRIVAL_DISTANCE = 0.1f;
     private const float MAX_Y = 3f;
-    private const float MIN_VELOCITY = 0.01f;
+    private const float MIN_VELOCITY = 0.001f;
     private const float MAX_VELOCITY = 0.05f;
     private float targetY = 0f;
     private float velocity = 0f;
