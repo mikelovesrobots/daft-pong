@@ -6,6 +6,7 @@ public class GoalAction : ActionBase {
     public GameObject Goal;
     public BallDestroyAction BallDestroyAction;
     public BallCreateAction BallCreateAction;
+    public GoalNameRenderer GoalNameRenderer;
 
     public override void Act() {
         BallDestroyAction.Act();
@@ -16,5 +17,12 @@ public class GoalAction : ActionBase {
     private void RevealGoalLabel() {
         FadeAnimator.Instance.FadeIn(Goal, 0f);
         FadeAnimator.Instance.FadeOut(Goal, FADE_OUT_DELAY, () => BallCreateAction.Act());
+        GoalNameRenderer.Render(LastShooter);
+    }
+
+    private string LastShooter {
+        get {
+            return GameHistory.Instance.LastShooter;
+        }
     }
 }
