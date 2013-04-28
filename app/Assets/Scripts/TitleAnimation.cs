@@ -11,6 +11,7 @@ public class TitleAnimation : MonoBehaviour {
     public GameObject Mikelovesrobots;
     public GameObject Title;
     public GameObject StartGame;
+    public GameObject QuitGame;
 
     public void Animate() {
         FadeIn(Mikelovesrobots, 0f);
@@ -18,6 +19,7 @@ public class TitleAnimation : MonoBehaviour {
         FadeIn(Title, 4f);
         MoveUp(Title, Vector3.up * 2, 5f);
         FadeIn(StartGame, 6f);
+        FadeIn(QuitGame, 6f);
     }
 
     private void FadeIn(GameObject target, float delay) {
