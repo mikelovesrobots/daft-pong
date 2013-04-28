@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AudioPlayer : MonoBehaviour {
     public AudioSource PlayGameSound;
+    public AudioSource GoalSound;
     public AudioSource[] SelectSounds;
     public AudioSource[] BounceSounds;
 
@@ -19,6 +20,10 @@ public class AudioPlayer : MonoBehaviour {
 
     public void PlayGame() {
         PlayGameSound.Play();
+    }
+
+    public void Goal() {
+        GoalSound.Play();
     }
 
     public void Select() {

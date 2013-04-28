@@ -19,6 +19,7 @@ public class GoalAction : ActionBase {
     public override void Act() {
         BallDestroyAction.Act();
         RevealGoalLabel();
+        AudioPlayer.Instance.Goal();
     }
 
     private void RevealGoalLabel() {
