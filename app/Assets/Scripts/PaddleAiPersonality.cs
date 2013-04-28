@@ -13,7 +13,9 @@ public class PaddleAiPersonality : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        currentAi.Tick();
+        if (BallFinder.Instance.Find() != null) {
+            currentAi.Tick();
+        }
     }
 
     private IEnumerator WaitThenSwitchPersonality() {
