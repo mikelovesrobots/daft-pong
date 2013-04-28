@@ -17,7 +17,9 @@ public class PaddleFactory : MonoBehaviour {
     }
 
     private static GameObject Spawn(Vector3 position) {
-        return GameObject.Instantiate(Prefab, position, Quaternion.identity) as GameObject;
+        var tweakedPosition = position;
+        tweakedPosition.x += Random.Range(-0.5f, 0.5f);
+        return GameObject.Instantiate(Prefab, tweakedPosition, Quaternion.identity) as GameObject;
     }
 
     private static GameObject Prefab {

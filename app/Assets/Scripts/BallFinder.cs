@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class BallFinder : MonoBehaviour {
+    public GameObject SurrogateBall;
     private GameObject ball;
     private static BallFinder instance;
 
@@ -22,6 +23,9 @@ public class BallFinder : MonoBehaviour {
     public GameObject Find() {
         if (ball == null) {
             ball = GameObject.Find("Ball");
+        }
+        if (ball == null) {
+            ball = SurrogateBall;
         }
         return ball;
     }
