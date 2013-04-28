@@ -6,13 +6,16 @@ public class PaddleNameRenderer : MonoBehaviour {
     private const float HEIGHT = 80;
     public GUISkin GuiSkin;
     private string playerName;
+    private Color color;
 
-    public void Initialize(string playerName) {
+    public void Initialize(string playerName, Color color) {
+        this.color = color;
         this.playerName = playerName;
     }
 
     void OnGUI () {
         GUI.skin = GuiSkin;
+        GUI.color = color;
         GUI.Label(Rect, playerName);
     }
 

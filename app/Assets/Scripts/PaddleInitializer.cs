@@ -6,7 +6,7 @@ public class PaddleInitializer : MonoBehaviour {
     public ColorChanger ColorChanger;
 
     public void Initialize(string name, Color color) {
-        PaddleNameRenderer.Initialize(name);
+        PaddleNameRenderer.Initialize(name, color.FullBright());
         ColorChanger.ChangeColor(color);
     }
 }
