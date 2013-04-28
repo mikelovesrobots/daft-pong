@@ -6,16 +6,7 @@ public class GoalAction : ActionBase {
     public GameObject Goal;
     public BallDestroyAction BallDestroyAction;
     public BallCreateAction BallCreateAction;
-    private static GoalAction instance;
-    public static GoalAction Instance {
-        get {
-            if (instance == null) {
-                instance = GameObject.Find("/Global/GoalAction").GetComponent<GoalAction>();
-            }
 
-            return instance;
-        }
-    }
     public override void Act() {
         BallDestroyAction.Act();
         RevealGoalLabel();
