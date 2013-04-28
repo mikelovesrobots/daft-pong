@@ -20,6 +20,6 @@ public class GameInitializer : MonoBehaviour {
             PaddleFactory.Ai(LeftChannel.position);
             PaddleFactory.Ai(RightChannel.position);
         }
-        PaddleFactory.Player(RightChannel.position - new Vector3(0.05f, 0, 0));
+        PaddleFactory.Player(RightChannel.position); 
     }
 }
