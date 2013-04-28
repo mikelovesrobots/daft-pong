@@ -13,6 +13,8 @@ public class PaddleFactory : MonoBehaviour {
         instance.GetComponent<PaddleInitializer>().Initialize(PlayerOptions.Name, PlayerOptions.Color.FullTransparent(), PlayerOptions.Color.FullBright(), true);
         Destroy(instance.GetComponent<PaddleAiPersonality>());
         instance.AddComponent<PaddlePlayerController>();
+        instance.name = "Player";
+        PlayerRegistry.Instance.Register(instance);
         return instance;
     }
 
