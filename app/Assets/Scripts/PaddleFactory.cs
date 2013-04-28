@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PaddleFactory : MonoBehaviour {
     public static GameObject Ai(Vector3 position) {
-        return Spawn(position);
+        var instance = Spawn(position);
+        instance.GetComponent<ColorChanger>().ChangeColor(RandomColor);
+        return instance;
     }
 
     public static GameObject Player(Vector3 position) {
@@ -22,4 +24,7 @@ public class PaddleFactory : MonoBehaviour {
         get { return PrefabRepository.Instance.Paddle; }
     }
 
+    private static Color RandomColor {
+        get { return PaddleColors.Instance.Random; }
+    }
 }
