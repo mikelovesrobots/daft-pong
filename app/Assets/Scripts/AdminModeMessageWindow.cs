@@ -2,15 +2,15 @@ using UnityEngine;
 using System.Collections;
 
 public class AdminModeMessageWindow : MonoBehaviour {
-    private const float WINDOW_WIDTH = 650;
+    private const float WINDOW_WIDTH = 300;
     private const float WINDOW_HEIGHT = 120;
-    private const float MESSAGE_HEIGHT = 40;
-    private const float BUTTON_HEIGHT = 40;
+    private const float MESSAGE_HEIGHT = 60;
+    private const float BUTTON_HEIGHT = 30;
     private const float BUTTON_WIDTH = 40;
     private string Message;
 
     public void Initialize() {
-        Message = "Could not sync player records to database server. Reason \"Player " + PlayerOptions.Name  + " log corrupted\". Entering admin-mode";
+        Message = "Could not sync player records to server.\nReason \"Player " + PlayerOptions.Name  + " log corrupted\".\nAdmin mode enabled";
     }
 
     void OnGUI () {

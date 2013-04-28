@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class AdminModeTriggerer : MonoBehaviour {
-    private const float WAIT_TIME = 120f;
+    private const float WAIT_TIME = 180f;
     public ActionBase AdminModeAction;
 
     public void Initialize() {
