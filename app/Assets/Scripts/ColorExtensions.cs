@@ -7,4 +7,10 @@ public static class ColorExtensions {
         newColor.a = 1.0f;
         return newColor;
     }
+
+    public static Color FullTransparent(this Color color) {
+        var newColor = color;
+        newColor.a = 0f;
+        return newColor;
+    }
 }
