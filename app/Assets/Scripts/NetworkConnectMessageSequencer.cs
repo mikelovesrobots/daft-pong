@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
+public class NetworkConnectMessageSequencer : MonoBehaviour {
     private const float FADE_ANIMATION_TIME = 1f;
     private const float MOVE_ANIMATION_TIME = 1f;
     private const float FADE_OUT_DELAY = 1.5f;
@@ -16,7 +16,7 @@ public class NetworkConnectMessageSequenceAnimator : MonoBehaviour {
     public GameObject ConnectionTimeout;
     public ActionBase ExitAction;
 
-    public void Animate() {
+    public void Sequence() {
         Connect();
     }
 
