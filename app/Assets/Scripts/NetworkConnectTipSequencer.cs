@@ -22,7 +22,21 @@ public class NetworkConnectTipSequencer : MonoBehaviour {
 
     private void PlayersLive() {
         var players = gamesBeingPlayed * 50;
-        TipRenderer.Render("That's about " + players + " players!", () => LudumDare());
+        TipRenderer.Render("That's about " + players + " players!", () => PlayerPlayed());
+    }
+
+    private void PlayerPlayed() {
+        var gamesPlayed = GamesPlayed;
+        var games = "games";
+        if (gamesPlayed == 1) {
+            games = "game";
+        }
+
+        TipRenderer.Render("You've played " + gamesPlayed + " " + games + " so far!", () => LudumDare());
+    }
+    
+    private int GamesPlayed {
+        get { return PlayerPrefs.GetInt("GamesPlayed"); }
     }
 
     private void LudumDare() {
