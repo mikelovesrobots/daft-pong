@@ -7,10 +7,20 @@ public class AdminModeTriggerer : MonoBehaviour {
     public ActionBase AdminModeAction;
 
     public void Initialize() {
-        StartCoroutine(WaitThenEnterAdminMode());
+        if (CanTriggerAdminMode) {
+            StartCoroutine(WaitThenEnterAdminMode());
+        }
     }
 
-    public IEnumerator WaitThenEnterAdminMode() {
+    private bool CanTriggerAdminMode {
+        get { return (GamesPlayed % 2) == 1; }
+    }
+
+    private int GamesPlayed {
+        get { return PlayerPrefs.GetInt("GamesPlayed"); }
+    }
+
+    private IEnumerator WaitThenEnterAdminMode() {
         yield return new WaitForSeconds(WAIT_TIME);
         AdminModeAction.Act();
     }

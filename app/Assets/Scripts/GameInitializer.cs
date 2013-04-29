@@ -9,10 +9,21 @@ public class GameInitializer : MonoBehaviour {
     public int PlayersPerSide = 50;
 
     void Start () {
+        IncrementGamesPlayed();
+        Debug.Log(GamesPlayed + " games played");
         AudioPlayer.Instance.PlayGame();
         SpawnPlayers();
         BallFactory.Create();
         AdminModeTriggerer.Initialize();
+    }
+
+    private void IncrementGamesPlayed() {
+        PlayerPrefs.SetInt("GamesPlayed", GamesPlayed + 1);
+        PlayerPrefs.Save();
+    }
+
+    private int GamesPlayed {
+        get { return PlayerPrefs.GetInt("GamesPlayed"); }
     }
 
     private void SpawnPlayers() {
